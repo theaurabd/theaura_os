@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0B3D30">
+<meta name="robots" content="noindex">
+<title>The Aura · My page</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌿</text></svg>">
+<style>
+:root{--g:#0D6B4F;--g2:#1F8A68;--gold:#D3A129;--sky:#1EBBE9;--red:#EE2943;--tx:#F4FBF8;--mu:rgba(244,251,248,.68);
+--glass:rgba(255,255,255,.10);--glass2:rgba(255,255,255,.16);--edge:rgba(255,255,255,.22);--ok:rgba(94,214,160,.28);--warn:rgba(211,161,41,.32);--bad:rgba(238,41,67,.30)}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html,body{margin:0;min-height:100%;font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text","Segoe UI",Roboto,Arial,sans-serif;color:var(--tx);font-size:15px}
+body{background:#062A21;overflow-x:hidden}
+.bg{position:fixed;inset:0;z-index:-1;background:radial-gradient(1200px 700px at 10% -10%,#1F8A68 0%,transparent 60%),
+radial-gradient(900px 600px at 110% 20%,#0E5E7A 0%,transparent 55%),radial-gradient(700px 500px at 50% 120%,#5E4A12 0%,transparent 60%),linear-gradient(160deg,#062A21,#0A3B2E 60%,#071F1A)}
+.blob{position:absolute;border-radius:50%;filter:blur(60px);opacity:.55;animation:float 18s ease-in-out infinite}
+.b1{width:320px;height:320px;background:#1EBBE9;top:-80px;right:-60px}.b2{width:260px;height:260px;background:#D3A129;bottom:-60px;left:-40px;animation-delay:-6s}
+.b3{width:220px;height:220px;background:#2FB386;top:40%;left:55%;animation-delay:-12s}
+@keyframes float{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(-30px,25px) scale(1.08)}}
+main{max-width:560px;margin:0 auto;padding:max(16px,env(safe-area-inset-top)) 16px max(40px,env(safe-area-inset-bottom))}
+.top{display:flex;align-items:center;justify-content:space-between;margin:6px 0 18px}
+.logo{background:rgba(255,255,255,.94);border-radius:14px;padding:8px 12px;display:flex;align-items:center;box-shadow:0 6px 24px rgba(0,0,0,.25)}
+.logo img{height:30px;display:block}.logo b{color:var(--g);font-size:15px;letter-spacing:.5px}
+.card{background:var(--glass);border:1px solid var(--edge);border-radius:22px;padding:18px;margin-bottom:14px;
+backdrop-filter:blur(22px) saturate(160%);-webkit-backdrop-filter:blur(22px) saturate(160%);box-shadow:0 10px 40px rgba(0,0,0,.28),inset 0 1px 0 rgba(255,255,255,.18)}
+@supports not ((backdrop-filter:blur(1px)) or (-webkit-backdrop-filter:blur(1px))){.card{background:rgba(10,50,40,.88)}}
+@media (prefers-reduced-motion:reduce){.blob{animation:none}}
+@media (prefers-reduced-transparency:reduce){.card{background:rgba(10,50,40,.92);backdrop-filter:none;-webkit-backdrop-filter:none}}
+h1{font-size:24px;margin:0 0 4px;letter-spacing:-.3px}h2{font-size:13px;margin:0 0 12px;color:var(--mu);font-weight:600;letter-spacing:.3px}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0 0}.chip{background:var(--glass2);border:1px solid var(--edge);border-radius:999px;padding:4px 10px;font-size:12px}
+.motto{margin:14px 0 0;padding:12px 14px;border-radius:14px;background:linear-gradient(135deg,rgba(211,161,41,.28),rgba(30,187,233,.16));border:1px solid rgba(255,255,255,.2);font-size:14px}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.stat{background:var(--glass2);border:1px solid var(--edge);border-radius:16px;padding:12px 14px}.stat small{color:var(--mu);font-size:12px}
+.stat b{display:block;font-size:26px;font-weight:700;margin-top:2px;letter-spacing:-.5px}
+.row{display:flex;justify-content:space-between;gap:12px;padding:10px 0;border-bottom:1px solid rgba(255,255,255,.10);font-size:14px}.row:last-child{border:0}
+.muted{color:var(--mu);font-size:12.5px}
+.pill{font-size:11.5px;padding:3px 9px;border-radius:999px;white-space:nowrap;align-self:center;border:1px solid var(--edge)}
+.Present,.Late,.Approved,.Issued{background:var(--ok)}.Absent,.Rejected{background:var(--bad)}.Leave,.Pending{background:var(--warn)}
+.tl{position:relative;padding-left:16px}.tl:before{content:"";position:absolute;left:4px;top:4px;bottom:4px;width:2px;background:rgba(255,255,255,.2)}
+.tl div{position:relative;margin:0 0 10px;font-size:14px}.tl div:before{content:"";position:absolute;left:-16px;top:5px;width:10px;height:10px;border-radius:50%;background:var(--gold)}
+label{display:block;font-size:12px;color:var(--mu);margin:10px 0 5px}
+input,select,textarea{width:100%;padding:12px;border-radius:12px;border:1px solid var(--edge);background:rgba(0,0,0,.22);color:var(--tx);font-size:16px;font-family:inherit}
+select option{color:#111}
+input:focus-visible,select:focus-visible,textarea:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+button{width:100%;padding:13px;margin-top:12px;border:0;border-radius:14px;font-size:15px;font-weight:600;color:#06251C;cursor:pointer;
+background:linear-gradient(135deg,#F3D27A,#D3A129);box-shadow:0 6px 18px rgba(211,161,41,.35)}
+button.ghost{background:var(--glass2);color:var(--tx);border:1px solid var(--edge);box-shadow:none}
+button:disabled{opacity:.6}
+details summary{cursor:pointer;font-weight:600;list-style:none;display:flex;justify-content:space-between}
+details summary::-webkit-details-marker{display:none}
+details summary:after{content:"＋";color:var(--gold)}details[open] summary:after{content:"－"}
+.msg{display:none;margin-top:10px;padding:10px 12px;border-radius:12px;font-size:14px}.msg.ok{display:block;background:var(--ok)}.msg.err{display:block;background:var(--bad)}
+.hide{display:none}.skel{height:14px;border-radius:7px;background:linear-gradient(90deg,rgba(255,255,255,.08),rgba(255,255,255,.18),rgba(255,255,255,.08));background-size:200% 100%;animation:sh 1.2s infinite;margin:8px 0}
+@keyframes sh{to{background-position:-200% 0}}
+.foot{text-align:center;color:var(--mu);font-size:12px;margin-top:18px}
+</style></head><body>
+<div class="bg"><div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div></div>
+<main>
+<div class="top"><div class="logo" id="logo"><b>THE AURA</b></div><span class="muted" id="hello"></span></div>
+
+<div id="checkin" class="card hide"><h2>Check in</h2><div id="ciName" style="font-weight:600"></div><div class="muted" id="ciHint"></div>
+ <div id="ciPhoneBox"><label for="ciPhone">Your phone number</label><input id="ciPhone" inputmode="tel" placeholder="01XXXXXXXXX"></div>
+ <button onclick="checkIn(this)">Check in / Check out</button><div id="ciMsg" class="msg" role="status"></div></div>
+
+<div id="landing" class="card hide"><h1>Your page at The Aura</h1>
+ <p class="muted">Open your personal page with the link from your email. Lost it? We will send it again.</p>
+ <label for="key">Member ID, phone number or email</label><input id="key" placeholder="AUR-0123 or 01XXXXXXXXX">
+ <button onclick="sendLink(this)">Send me my link</button><div id="lMsg" class="msg" role="status"></div></div>
+
+<div id="loading" class="card"><div class="skel" style="width:55%"></div><div class="skel"></div><div class="skel" style="width:80%"></div></div>
+
+<div id="app" class="hide">
+ <div class="card"><h1 id="who"></h1><div class="muted" id="sub"></div><div class="chips" id="chips"></div><div class="motto" id="motto"></div></div>
+ <div class="card"><h2>Your contribution</h2><div class="grid">
+  <div class="stat"><small>Points</small><b id="sPts"></b></div><div class="stat"><small>Volunteer hours</small><b id="sHrs"></b></div>
+  <div class="stat"><small>Participation</small><b id="sPart"></b></div><div class="stat"><small>Duties done</small><b id="sDuty"></b></div></div>
+  <div class="muted" id="sMore" style="margin-top:12px"></div></div>
+ <div class="card"><h2 id="mLabel">This month</h2><div id="month"></div></div>
+ <div class="card"><h2>Recent activities</h2><div id="recent"></div></div>
+ <div class="card"><h2>Recognition</h2><div id="recs"></div></div>
+ <div class="card"><h2>Your journey</h2><div class="tl" id="journey"></div></div>
+ <div class="card"><h2>Contributions</h2><div id="cons"></div></div>
+ <div class="card"><h2>Blood</h2><div id="blood"></div></div>
+ <div class="card"><details><summary>Share work you did outside events</summary>
+  <label for="cTask">What did you do?</label><textarea id="cTask" rows="3"></textarea>
+  <div class="grid"><div><label for="cDate">Date</label><input id="cDate" type="date"></div><div><label for="cHrs">Hours</label><input id="cHrs" inputmode="decimal"></div></div>
+  <label for="cLink">Link to the work (optional)</label><input id="cLink"><button onclick="claim(this)">Send to HR</button><div id="cMsg" class="msg" role="status"></div></details></div>
+ <div class="card"><details><summary>Ask HR to update your details</summary>
+  <div class="muted" id="contact" style="margin-top:8px"></div>
+  <label for="uField">What should change?</label><select id="uField"></select><label for="uVal">New value</label><input id="uVal">
+  <button onclick="upd(this)">Send to HR</button><div id="uMsg" class="msg" role="status"></div></details></div>
+ <div class="card"><details><summary>I donated blood</summary>
+  <div class="grid"><div><label for="dDate">Date</label><input id="dDate" type="date"></div><div><label for="dPlace">Hospital</label><input id="dPlace"></div></div>
+  <button onclick="don(this)">Tell HR</button><div id="dMsg" class="msg" role="status"></div></details></div>
+ <div class="card"><details><summary>Link and privacy</summary>
+  <p class="muted">This page opens with your personal link. Please do not share it. If someone else may have it, make a new one: the old link stops at once.</p>
+  <button class="ghost" onclick="newLink(this)">Make me a new link</button><div id="nMsg" class="msg" role="status"></div></details></div>
+ <div class="foot">The Aura · Protecting Today, Sustaining Tomorrow</div>
+</div>
+</main>
+<script>
+/* ===== SETUP: paste the Web app URL from Apps Script > Deploy > Manage deployments (ends with /exec) ===== */
+var API = 'https://script.google.com/macros/s/AKfycbygxkwwy3nih-OsvV3T59MMqlxWS_w4a3yO8r45497Z6pfMokvGoCLzUNAMBuAXtdTB/exec';
+/* ======================================================================================================= */
+
+var Q = new URLSearchParams(location.search);
+var CFG = { k: Q.get('k') || '', a: Q.get('a') || '', t: Q.get('t') || '' };
+function $(i){return document.getElementById(i);}
+function esc(s){return String(s==null?'':s).replace(/[&<>"']/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];});}
+function say(id,t,ok){var m=$(id);m.textContent=t;m.className='msg '+(ok?'ok':'err');}
+function fail(box,e){
+  var t=(e&&e.name==='TypeError')?'Could not connect to The Aura. Check your internet and try again.':((e&&e.message)||String(e));
+  if(box){say(box,t,false);return;}
+  $('loading').classList.add('hide');$('landing').classList.remove('hide');say('lMsg',t,false);
+}
+/* One request to the Aura server. No Google sign-in or cookies are sent, so the multi-account error cannot happen. */
+function run(fn,args,done,box,btn){
+  if(btn)btn.disabled=true;
+  var url=API+'?api=1&fn='+encodeURIComponent(fn)+'&args='+encodeURIComponent(JSON.stringify(args||[]));
+  fetch(url,{method:'GET',credentials:'omit',redirect:'follow'})
+    .then(function(r){if(!r.ok)throw new Error('The Aura server did not answer ('+r.status+'). Please try again.');return r.json();})
+    .then(function(x){if(!x||!x.ok)throw new Error((x&&x.error)||'Something went wrong. Please try again.');return x.data;})
+    .then(function(d){if(btn)btn.disabled=false;done(d);},function(e){if(btn)btn.disabled=false;fail(box,e);});
+}
+function list(a,f,empty){return a.length?a.map(f).join(''):'<div class="muted">'+(empty||'Nothing yet.')+'</div>';}
+function render(d){$('loading').classList.add('hide');$('app').classList.remove('hide');
+ if(d.logo){$('logo').innerHTML='<img src="'+esc(d.logo)+'" alt="The Aura">';}
+ $('hello').textContent='Hi, '+String(d.name).split(' ')[0];$('who').textContent=d.name;
+ $('sub').textContent=d.id+(d.institution?' · '+d.institution:'');
+ $('chips').innerHTML=[d.stage,d.cohort,d.wing,d.joined?'Since '+d.joined:'',d.cmEnd?'CM term until '+d.cmEnd:''].filter(String).map(function(x){return '<span class="chip">'+esc(x)+'</span>';}).join('');
+ $('motto').textContent=d.motivation;
+ $('sPts').textContent=d.all.pts;$('sHrs').textContent=d.all.hrs;$('sPart').textContent=d.all.part==null?'—':d.all.part+'%';$('sDuty').textContent=d.all.duty==null?'—':d.all.duty+'%';
+ $('sMore').textContent='Attended '+d.all.came+' of '+d.all.chances+(d.all.led?' · led '+d.all.led+' times':'')+(d.all.contrib?' · '+d.all.contrib+' contribution points':'')+(d.all.lastSeen?' · last seen '+d.all.lastSeen:'');
+ $('mLabel').textContent=d.month.label;
+ $('month').innerHTML='<div class="grid"><div class="stat"><small>Activities</small><b>'+d.month.came+'<span class="muted" style="font-size:14px"> / '+d.month.chances+'</span></b></div><div class="stat"><small>Points</small><b>'+d.month.pts+'</b></div></div>';
+ $('recent').innerHTML=list(d.recent,function(r){return '<div class="row"><span>'+esc(r.name)+'<br><span class="muted">'+esc(r.day)+(r.role&&r.role!=='Participant'?' · '+esc(r.role):'')+(r.pts?' · '+r.pts+' pts':'')+'</span></span><span class="pill '+esc(r.status)+'">'+esc(r.status)+'</span></div>';});
+ $('recs').innerHTML=list(d.recs,function(r){return '<div class="row"><span>'+esc(r.title)+(r.itemNo?'<br><span class="muted">'+esc(r.itemNo)+'</span>':'')+'</span><span class="pill '+esc(r.status)+'">'+esc(r.status)+'</span></div>';},'Your recognitions will appear here.');
+ $('journey').innerHTML=d.journey.length?d.journey.map(function(j){return '<div>'+esc(j.event==='Join'?'Joined as '+j.to:j.event==='Renewal'?'Core Member term renewed':j.event==='Term end'?'Core Member term ended':'Became '+j.to)+'<br><span class="muted">'+esc(j.day)+'</span></div>';}).join(''):'<div>Your journey starts here.</div>';
+ $('cons').innerHTML=list(d.cons,function(r){return '<div class="row"><span>'+esc(r.task)+'<br><span class="muted">'+esc(r.day)+' · '+esc(r.hrs)+' hrs'+(r.pts!==''?' · '+esc(r.pts)+' pts':'')+'</span></span><span class="pill '+esc(r.status)+'">'+esc(r.status)+'</span></div>';},'Work you share with HR will appear here.');
+ $('blood').innerHTML='<div class="row"><span>Blood group</span><b>'+esc(d.blood||'Not on record')+'</b></div><div class="row"><span>Donations</span><b>'+d.donations+'</b></div>'+
+  (d.lastDon?'<div class="row"><span>Last donated</span><b>'+esc(d.lastDon)+'</b></div>':'')+'<div class="row"><span>'+(d.canDonate?'You can donate now':'You can donate again from')+'</span><b>'+(d.canDonate?'✓':esc(d.nextDon))+'</b></div>';
+ $('contact').textContent='On record: '+[d.phone,d.email].filter(String).join(' · ');
+ $('uField').innerHTML=d.fields.map(function(f){return '<option>'+esc(f)+'</option>';}).join('');
+ $('ciPhoneBox').classList.add('hide');}
+function load(){run('mpData',[CFG.k],render);}
+function sendLink(b){run('mpSendLink',[$('key').value],function(x){say('lMsg',x.msg,x.ok);},'lMsg',b);}
+function claim(b){run('mpClaim',[CFG.k,{task:$('cTask').value,date:$('cDate').value,hours:$('cHrs').value,link:$('cLink').value}],function(x){say('cMsg',x.msg,x.ok);if(x.ok){$('cTask').value='';$('cHrs').value='';$('cLink').value='';}},'cMsg',b);}
+function upd(b){run('mpUpdate',[CFG.k,{field:$('uField').value,value:$('uVal').value}],function(x){say('uMsg',x.msg,x.ok);if(x.ok)$('uVal').value='';},'uMsg',b);}
+function don(b){run('mpDonation',[CFG.k,{date:$('dDate').value,place:$('dPlace').value}],function(x){say('dMsg',x.msg,x.ok);if(x.ok)load();},'dMsg',b);}
+function newLink(b){if(!confirm('Make a new link? This page will stop working.'))return;run('mpNewLink',[CFG.k],function(x){say('nMsg',x.msg,x.ok);},'nMsg',b);}
+function checkIn(b){run('mpCheckin',[CFG.a,CFG.t,CFG.k,$('ciPhone').value],function(x){say('ciMsg',x.msg,x.ok);},'ciMsg',b);}
+if(CFG.a){run('mpCheckinInfo',[CFG.a,CFG.t],function(x){if(x.ok){$('checkin').classList.remove('hide');$('ciName').textContent=x.name;$('ciHint').textContent=(x.day||'')+(x.online?' · online: check in at the start and check out at the end':'');}},'ciMsg');}
+if(CFG.k){load();}else{$('loading').classList.add('hide');if(!CFG.a)$('landing').classList.remove('hide');}
+</script>
+</body></html>
