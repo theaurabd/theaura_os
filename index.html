@@ -5,7 +5,7 @@
 <meta name="theme-color" content="#0B3D30">
 <meta name="robots" content="noindex">
 <title>The Aura · My page</title>
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌿</text></svg>">
+<link rel="icon" href="logo-zero-background.png"><link rel="apple-touch-icon" href="logo-zero-background.png">
 <style>
 :root{--g:#0D6B4F;--g2:#1F8A68;--gold:#D3A129;--sky:#1EBBE9;--red:#EE2943;--tx:#F4FBF8;--mu:rgba(244,251,248,.68);
 --glass:rgba(255,255,255,.10);--glass2:rgba(255,255,255,.16);--edge:rgba(255,255,255,.22);--ok:rgba(94,214,160,.28);--warn:rgba(211,161,41,.32);--bad:rgba(238,41,67,.30)}
@@ -57,7 +57,7 @@ details summary:after{content:"＋";color:var(--gold)}details[open] summary:afte
 </style></head><body>
 <div class="bg"><div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div></div>
 <main>
-<div class="top"><div class="logo" id="logo"><b>THE AURA</b></div><span class="muted" id="hello"></span></div>
+<div class="top"><div class="logo" id="logo"><img src="logo-zero-background.png" alt="The Aura"></div><span class="muted" id="hello"></span></div>
 
 <div id="checkin" class="card hide"><h2>Check in</h2><div id="ciName" style="font-weight:600"></div><div class="muted" id="ciHint"></div>
  <div id="ciPhoneBox"><label for="ciPhone">Your phone number</label><input id="ciPhone" inputmode="tel" placeholder="01XXXXXXXXX"></div>
@@ -125,7 +125,6 @@ function run(fn,args,done,box,btn){
 }
 function list(a,f,empty){return a.length?a.map(f).join(''):'<div class="muted">'+(empty||'Nothing yet.')+'</div>';}
 function render(d){$('loading').classList.add('hide');$('app').classList.remove('hide');
- if(d.logo){$('logo').innerHTML='<img src="'+esc(d.logo)+'" alt="The Aura">';}
  $('hello').textContent='Hi, '+String(d.name).split(' ')[0];$('who').textContent=d.name;
  $('sub').textContent=d.id+(d.institution?' · '+d.institution:'');
  $('chips').innerHTML=[d.stage,d.cohort,d.wing,d.joined?'Since '+d.joined:'',d.cmEnd?'CM term until '+d.cmEnd:''].filter(String).map(function(x){return '<span class="chip">'+esc(x)+'</span>';}).join('');
